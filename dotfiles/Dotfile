@@ -1,0 +1,5 @@
+backup [".vimrc", ".vim", ".zshrc", ".bashrc"], "~/dotfiles.backup"
+link "vimrc", "~/.vimrc"
+link "vim", "~/.vim"
+link "zshrc", "~/.zshrc"
+link "bashrc", "~/.bashrc"
