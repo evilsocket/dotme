@@ -40,7 +40,7 @@ module DotMe
     end
 
     def git_clone( repo, where )
-      puts "GIT CLONE #{repo} #{where}"
+      system "git clone #{repo} \"#{where}\""
     end
 
     def sh( cmd )
