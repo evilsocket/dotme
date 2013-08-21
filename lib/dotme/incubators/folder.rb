@@ -4,11 +4,11 @@ module DotMe
       begin
         require 'git'
 
-        { :git_clone => Git.open( @path ).config['remote.origin.url'], :to => @relative }
+        { :git_clone => Git.open( @path ).config['remote.origin.url'], :to => ::File.join( '~', @relative ) }
       rescue
         FileUtils.cp_r @path, ::File.join( to, @basename )
 
-        { :link => @basename, :to => @relative }
+        { :link => @basename, :to => ::File.join( '~', @relative ) }
       end
     end
 

@@ -29,6 +29,10 @@ module DotMe
       File.symlink what, where
     end
 
+    def _git_clone( repo, where )
+      system "git clone #{repo} \"#{where}\""
+    end
+
     def method_missing( name, *args )
       name = "_#{name}"
       if respond_to? name
@@ -37,10 +41,6 @@ module DotMe
         end
         send name.to_sym, *args
       end
-    end
-
-    def git_clone( repo, where )
-      system "git clone #{repo} \"#{where}\""
     end
 
     def sh( cmd )

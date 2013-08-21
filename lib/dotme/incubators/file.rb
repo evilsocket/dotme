@@ -5,7 +5,7 @@ module DotMe
     def incubate(to)
       FileUtils.cp_r @path, ::File.join( to, @basename ) 
 
-      { :link => @basename, :to => @relative }
+      { :link => @basename, :to => ::File.join( '~', @relative ) }
     end
 
     def self.incubates?(path)
