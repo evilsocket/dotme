@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 require 'dotme/commander'
 
-DotMe::Commander.dispatch!(ARGV)
+DotMe::Commander.dispatch!
